@@ -28,7 +28,7 @@ BUILD_TARGET=otapackage
 # format: DEVICE_CODENAME:DEVICE_MODEL:DESCRIPTION
 # Use '_' to denote a space.
 DEVICES+=coreprimeltespr:SM-G360P,
-
+DEVICES+=j5xnlte:SM-J510FN,
 
 # extra commands to pass to build script
 SHELL_COMMANDS_EXTRA="--clean"
