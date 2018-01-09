@@ -33,6 +33,7 @@ DEVICES=j5lte:SM-J500F/G/M/Y:Unified,
 DEVICES+=j53gxx:SM-J500H,
 DEVICES+=j5ltechn:SM-J5008,
 DEVICES+=j5nlte:SM-J500FN
+DEVICES+=j5xnlte:SM-J510FN
 
 # extra commands to pass to build script
 SHELL_COMMANDS_EXTRA+="--branch-map=kernel/samsung/msm8916:cm-14.1-experimental"
