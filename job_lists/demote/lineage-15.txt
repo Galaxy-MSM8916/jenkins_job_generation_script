@@ -17,11 +17,11 @@ BLOCKING_JOBS=administrative/block_all_jobs
 
 DIST=lineage
 DIST_LONG=LineageOS
-DIST_VERSION=15.0
-JOB_DIR=administrative/Promote_${DIST_LONG}_Builds
-JOB_EXTENDED_DESCRIPTION="Promote ${DIST_LONG} ##DIST_VERSION for the ##DEVICE_MODEL"
+DIST_VERSION=15.0,15.1
+JOB_DIR=administrative/Demote_${DIST_LONG}_Builds
+JOB_EXTENDED_DESCRIPTION="Demote ${DIST_LONG} ##DIST_VERSION for the ##DEVICE_MODEL"
 JOB_PREFIX=los
-BUILD_TARGET=promote
+BUILD_TARGET=demote
 
 # format: DEVICE_CODENAME:DEVICE_MODEL:DESCRIPTION
 # Use '_' to denote a space.
