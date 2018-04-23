@@ -83,6 +83,8 @@ if [ "x$CONFIG_PATH" != "x" ]; then
 	display_extra+="(${DEVICE_EXTRA_DESC}) "
   fi
 
+build_trigger="  <publishers/>"
+
   if [ "$BUILD_TARGET" == "otapackage" ] || [ "$BUILD_TARGET" == "bootimage" ] || [ "$BUILD_TARGET" == "recoveryimage" ]; then
 args_extra="
    <hudson.model.ParametersDefinitionProperty>
@@ -95,6 +97,17 @@ args_extra="
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   "
+    build_trigger="  <publishers>
+    <hudson.tasks.BuildTrigger>
+      <childProjects>administrative/server_admin/add_create_torrents</childProjects>
+      <threshold>
+        <name>SUCCESS</name>
+        <ordinal>0</ordinal>
+        <color>BLUE</color>
+        <completeBuild>true</completeBuild>
+      </threshold>
+    </hudson.tasks.BuildTrigger>
+  </publishers>"
   fi
 
   if [ -n "$ASSIGNED_NODE" ]; then
@@ -139,7 +152,7 @@ args_extra="
       <command>${SHELL_COMMANDS}</command>
     </hudson.tasks.Shell>
   </builders>
-  <publishers/>
+${build_trigger}
   <buildWrappers>
     <hudson.plugins.timestamper.TimestamperBuildWrapper plugin="timestamper@1.8.8"/>
     <hudson.plugins.ansicolor.AnsiColorBuildWrapper plugin="ansicolor@0.5.0">
