@@ -337,7 +337,7 @@ for file in $JOB_DESC_FILES; do
 			elif [ "$BUILD_TARGET" == "promote" ]; then
 				CAN_ROAM=false
 
-				SHELL_COMMANDS="~/bin/ota.sh -t ${BUILD_TARGET} -d ${DEVICE_CODENAME} -v ${OTA_VER} -j \$JOB_NUM"
+				SHELL_COMMANDS="~/bin/ota.sh -t ${BUILD_TARGET} -d ${DEVICE_CODENAME} -v ${OTA_VER} -j \$JOB_NUM \\"
 				SHELL_COMMANDS+=${NEWLINE}
 			elif [ "$BUILD_TARGET" == "demote" ]; then
 
